@@ -1,4 +1,6 @@
-package Logica;
+package Logica.palavras;
+
+import Logica.interfaces.Letra;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -7,13 +9,13 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
 
-public class PalavraDoDia {
+public class PalavraDoDia implements Letra {
     private String palavra;
     private String[] letraResposta;
 
     public PalavraDoDia() {
         try {
-            List<String> palavras = Files.readAllLines(Paths.get("/home/asaas/termo/src/Logica/palavras.txt"), StandardCharsets.UTF_8);
+            List<String> palavras = Files.readAllLines(Paths.get("/home/asaas/termo/src/Logica/palavras/palavras.txt"), StandardCharsets.UTF_8);
             if (palavras.isEmpty()) {
                 System.out.println("O arquivo está vazio.");
                 return;
@@ -27,12 +29,7 @@ public class PalavraDoDia {
         }
     }
 
-    public String getPalavra() {
-        return palavra;
-    }
-
-
-
+    @Override
     public String getLetra(int indice) {
         return letraResposta[indice];
     }
