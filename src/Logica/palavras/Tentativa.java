@@ -9,10 +9,23 @@ public class Tentativa implements Letra {
     private String[] letraTentativa;
 
     public Tentativa() {
-        Scanner sc = new Scanner(System.in);
+        try {
+            Scanner sc = new Scanner(System.in);
+            String tentativa = sc.nextLine();
 
-        this.palavraDaTentativa = sc.nextLine();
-        this.letraTentativa = palavraDaTentativa.split("");
+            if (tentativa == null || tentativa.trim().isEmpty()) {
+                throw new IllegalArgumentException("A palavra não pode ser nula ou vazia");
+            }
+            if (tentativa.length() != 5) {
+                throw new IllegalArgumentException(("A palavra deve conter exatamente 5 letras"));
+            }
+
+            this.palavraDaTentativa = tentativa;
+            this.letraTentativa = palavraDaTentativa.split("");
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
