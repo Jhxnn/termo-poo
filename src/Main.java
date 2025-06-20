@@ -1,12 +1,11 @@
-import Logica.PalavraDoDia;
+import Logica.palavras.PalavraDoDia;
+import Logica.validador.ValidadorDeTentativa;
 
 public class Main {
     public static void main(String[] args) {
-        PalavraDoDia palavra = new PalavraDoDia();
-        System.out.println(palavra.getPalavra());
-        for(String letra : palavra.getLetras()) {
-            System.out.println(letra);
-        }
+
+        ValidadorDeTentativa validador = new ValidadorDeTentativa();
+        System.out.println(validador);
 
     }
 }
