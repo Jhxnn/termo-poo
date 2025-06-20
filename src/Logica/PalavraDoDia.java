@@ -9,6 +9,7 @@ import java.util.Random;
 
 public class PalavraDoDia {
     private String palavra;
+    private String[] letraResposta;
 
     public PalavraDoDia() {
         try {
@@ -20,12 +21,20 @@ public class PalavraDoDia {
             Random random = new Random();
             int indiceSorteado = random.nextInt(palavras.size());
             this.palavra = palavras.get(indiceSorteado);
+            this.letraResposta = this.palavra.split("");
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // MUDAR O RETORNO DO CATCH
         }
     }
 
     public String getPalavra() {
         return palavra;
     }
+
+
+
+    public String getLetra(int indice) {
+        return letraResposta[indice];
+    }
+
 }
