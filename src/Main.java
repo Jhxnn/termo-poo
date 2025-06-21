@@ -5,7 +5,5 @@ public class Main {
     public static void main(String[] args) {
 
         ValidadorDeTentativa validador = new ValidadorDeTentativa();
-        System.out.println(validador);
-
     }
 }
