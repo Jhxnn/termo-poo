@@ -9,9 +9,11 @@ import java.util.Objects;
 public class ValidadorDeTentativa {
     private PalavraDoDia resposta;
     private Tentativa tentativa;
-    private int numeroDeTentativas;
 
     public ValidadorDeTentativa() {
+        this.resposta = new PalavraDoDia();
+        this.tentativa = new Tentativa();
+
         String corDaLetra = null;
         ArrayList<String> resultadoDaTentativa = new ArrayList<String>();
 
@@ -19,15 +21,15 @@ public class ValidadorDeTentativa {
             if (Objects.equals(resposta.getLetra(indice), tentativa.getLetra(indice))) {
                 corDaLetra = "\u001B[32m"; //verde
             }
-            if (!resposta.getLetra(indice).equals(tentativa.getLetra(indice))) {
-                corDaLetra = "\u001B[31m";
+            else {
+                corDaLetra = "\u001B[31m"; // vermelho
             }
 
             resultadoDaTentativa.add(corDaLetra);
             resultadoDaTentativa.add(tentativa.getLetra(indice));
         }
 
-        System.out.println(String.join("+", resultadoDaTentativa));
+        System.out.println(String.join("", resultadoDaTentativa));
 
     }
 }
