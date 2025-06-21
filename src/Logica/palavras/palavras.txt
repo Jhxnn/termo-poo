@@ -12,6 +12,7 @@ manha
 nuvem
 olhos
 poder
+gasto
 quase
 rindo
 saber
@@ -30,6 +31,7 @@ ganho
 haste
 ideal
 jogar
+marra
 livro
 marca
 nobre
@@ -366,5 +368,6 @@ roubo
 salas
 trava
 unido
+cacto
 vivaz
 zebra
