@@ -1,4 +1,3 @@
-import Logica.Logica;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,3 +9,8 @@ public class Main {
 
 
 }
+=======
+        ValidadorDeTentativa validador = new ValidadorDeTentativa();
+    }
+}
+>>>>>>> df18059f916f869c147b9167f8801115c35dda00
