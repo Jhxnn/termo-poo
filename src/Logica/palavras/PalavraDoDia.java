@@ -16,7 +16,7 @@ public class PalavraDoDia implements Letra {
     public PalavraDoDia() {
         try {
             List<String> palavras = Files.readAllLines(
-                    Paths.get("/home/asaas/termo/src/Logica/palavras/palavras.txt"),
+                    Paths.get("src/Logica/palavras/palavras.txt"),
                     StandardCharsets.UTF_8
             );
 
@@ -41,4 +41,19 @@ public class PalavraDoDia implements Letra {
         return letraResposta[indice];
     }
 
+    public String getPalavra() {
+        return palavra;
+    }
+
+    public void setPalavra(String palavra) {
+        this.palavra = palavra;
+    }
+
+    public String[] getLetraResposta() {
+        return letraResposta;
+    }
+
+    public void setLetraResposta(String[] letraResposta) {
+        this.letraResposta = letraResposta;
+    }
 }

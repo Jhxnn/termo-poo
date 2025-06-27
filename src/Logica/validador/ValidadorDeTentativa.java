@@ -3,33 +3,29 @@ package Logica.validador;
 import Logica.palavras.PalavraDoDia;
 import Logica.palavras.Tentativa;
 
-import java.util.ArrayList;
-import java.util.Objects;
-
 public class ValidadorDeTentativa {
     private PalavraDoDia resposta;
     private Tentativa tentativa;
 
-    public ValidadorDeTentativa() {
-        this.resposta = new PalavraDoDia();
-        this.tentativa = new Tentativa();
+    public ValidadorDeTentativa(PalavraDoDia resposta, Tentativa tentativa) {
+        this.resposta = resposta;
+        this.tentativa = tentativa;
 
-        String corDaLetra = null;
-        ArrayList<String> resultadoDaTentativa = new ArrayList<String>();
+        String palavraResposta = resposta.getPalavra().toLowerCase();
+        String palavraTentativa = tentativa.getPalavraDaTentativa().toLowerCase();
 
-        for (int indice = 0; indice < 5; indice++) {
-            if (Objects.equals(resposta.getLetra(indice), tentativa.getLetra(indice))) {
-                corDaLetra = "\u001B[32m"; //verde
+        for (int i = 0; i < 5; i++) {
+            char letraTentativa = palavraTentativa.charAt(i);
+
+            if (letraTentativa == palavraResposta.charAt(i)) {
+                System.out.print("\u001B[32m" + letraTentativa + "\u001B[0m");
+            } else if (palavraResposta.contains(String.valueOf(letraTentativa))) {
+                System.out.print("\u001B[33m" + letraTentativa + "\u001B[0m");
+            } else {
+                System.out.print("\u001B[31m" + letraTentativa + "\u001B[0m");
             }
-            else {
-                corDaLetra = "\u001B[31m"; // vermelho
-            }
-
-            resultadoDaTentativa.add(corDaLetra);
-            resultadoDaTentativa.add(tentativa.getLetra(indice));
         }
 
-        System.out.println(String.join("", resultadoDaTentativa));
-
+        System.out.println();
     }
 }
